@@ -15,7 +15,10 @@ inputs:
     description: "Comma-separated list of folders/files to exclude from ZIP"
     required: false
     default: ""
-
+  compression-level:
+    description: "0-9 level range of compression, 9 is the slowest and highest compression"
+    required: true
+    default: 6
 runs:
   using: "composite"
   steps:
@@ -43,5 +46,6 @@ runs:
           DOMAIN: ${{ inputs.nekoweb-domain }}
           USERNAME: ${{ inputs.nekoweb-username }}
           IGNORE_PATHS: ${{ inputs.ignore-paths }}
+          COMPRESSION_LEVEL: ${{ inputs.compression-level }}
       run: npm run deploy
       shell: bash

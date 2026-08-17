@@ -1,8 +1,9 @@
 {
   "dependencies": {
+    "archiver": "^7.0.1",
     "form-data": "^4.0.5",
     "fs": "^0.0.1-security",
-    "jszip": "^3.10.1"
+    "p-limit": "^7.3.0"
   },
   "scripts": {
     "deploy": "node deploy.js"
